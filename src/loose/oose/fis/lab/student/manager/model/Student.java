@@ -28,12 +28,12 @@ public class Student {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Student)) return false;
         Student student = (Student) o;
         return age == student.age &&
                 Double.compare(student.meanGrade, meanGrade) == 0 &&
-                Objects.equals(firstName, student.firstName) &&
-                Objects.equals(lastName, student.lastName);
+                firstName.equals(student.firstName) &&
+                lastName.equals(student.lastName);
     }
 
     @Override
